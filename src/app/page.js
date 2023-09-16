@@ -1,6 +1,13 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+
+import TopBar from "@/components/TopBar";
+import CategoryList from "@/components/CategoryList";
 
 export default function Home() {
-  return <main></main>;
+  return (
+    <main>
+      <TopBar></TopBar>
+      <CategoryList></CategoryList>
+    </main>
+  );
 }

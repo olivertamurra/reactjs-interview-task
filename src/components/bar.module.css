@@ -1,0 +1,21 @@
+.container{
+  display: flex;
+  justify-content: space-between;
+  background-color: darkslateblue;
+  color: white;
+  padding: 0.5rem;
+}
+
+.container h1{
+font-size: 1rem;
+font-weight: normal;
+}
+
+.container button{
+  outline: none;
+  background-color: transparent;
+  font-size: 1.15rem;
+  color: white;
+  box-shadow: none;
+  border: 0;
+}

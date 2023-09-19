@@ -1,27 +1,43 @@
 import React, { useState } from "react";
 import Button from "./Button";
+import "./CategoryList.style.css";
 
 const CategoryList = () => {
-  const handleClick = () => {
-    console.log("New category");
-  };
   const [categories, setCategories] = useState([
-    { id: "1", name: "category1" },
+    { id: "1", name: "Category1" },
   ]);
+
+  const handleClick = () => {
+    // Krijoni një kategori të re
+    const newCategory = {
+      id: Date.now().toString(), // Gjeneroni një ID të ri (mund të përdorni një metodë tjetër për të krijuar ID)
+      name: "New Category", // Vendosni emrin që dëshironi për kategorinë e re
+    };
+
+    // Përditësoni listën e kategorive duke shtuar kategorinë e re
+    setCategories([...categories, newCategory]);
+  };
 
   return (
     <section>
-      <Button
-        text={"New Category"}
-        icon={"d"}
-        backgroundColor={"green"}
-        onClick={handleClick}
-      ></Button>
-      <ul>
-        {categories.map((category) => (
-          <Category key={category.id} name={category.name} />
-        ))}
-      </ul>
+      <div className="Ccontainer">
+        <div className="create-cadegory">
+          <Button
+            text={"Create Category"}
+            icon={"d"}
+            backgroundColor={"#71CF48"}
+            onClick={handleClick}
+            className={"categorybut"}
+          ></Button>
+          <ul>
+            {categories.map((category) => (
+              <Category key={category.id} name={category.name} />
+            ))}
+          </ul>
+        </div>
+
+        <div className="notes">sdsdd</div>
+      </div>
     </section>
   );
 };
